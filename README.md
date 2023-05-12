@@ -1,5 +1,7 @@
 ## BlockerBoy
 
+A work in progress, basic NIDS and nefarious traffic cross-referencer/blocker, for windows based dmachines
+
 ## Usage
 
 You can use "NIDS2.py" as a basic network intrusion detection system to export live real time network logs as "nids.log". (these logs can further be used for an SEIM)
