@@ -19,6 +19,8 @@ This system is designed for windows 10 home. I have not tested it on pro or any 
 
 (note you can leave BlockerBoy.py running and simply update the "block.txt" file with blockthese.txt data as it comes. Ie: BlockerBoy will block the newly added IPs) 
 
+## Important first steps before running the script
+
 Ensure you update "blockem2.py" where I have left comments ie "# Your API key from AlienVault OTX" with your Alienvault OTX API Key in order for this system to work correctly.
 
 ## Developed by 
