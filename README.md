@@ -25,4 +25,4 @@ Ensure you update "blockem2.py" where I have left comments ie "# Your API key fr
 
 ## Developed by 
 
-Addam Rivers, abtzpro, Hello Security LLC, and help from AI performing the following: debugging/function suggestion/function addition
+Adam Rivers, abtzpro, Hello Security LLC, and help from AI performing the following: debugging/function suggestion/function addition
