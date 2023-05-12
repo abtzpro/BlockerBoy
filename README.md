@@ -1,6 +1,6 @@
 ## BlockerBoy
 
-A work in progress, basic NIDS and nefarious traffic cross-referencer/blocker, for windows based dmachines
+A work in progress, basic NIDS and nefarious traffic cross-referencer/blocker, for windows based machines
 
 ## Usage
 
