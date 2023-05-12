@@ -4,7 +4,7 @@ import ipaddress
 import time
 
 # Your API key from AlienVault OTX
-api_key = '505fcff9a52d1a8b43197054cb6ff939a7b0bc7abbe5176385a018639a3900dc'
+api_key = 'Your-OTX-API-Key-Here'
 
 # The directory of the currently running script
 script_dir = os.path.dirname(os.path.abspath(__file__))
