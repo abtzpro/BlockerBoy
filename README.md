@@ -42,6 +42,7 @@ Download the repo as a zip and unzip the files. The files should be in their own
 ## Script Breakdown
 
 NIDS2.py: 
+
 Get Drives and Backup Logs- The script defines functions to get all available drives on the system and to backup a specified log file to each of these drives.
 
 Logging Setup- The script sets up logging with a log file named nids.log. It logs information with a timestamp and the level of the logged information (INFO, WARNING, etc.).
@@ -59,6 +60,7 @@ Main Loop- In the main loop, the script repeatedly performs the packet capture a
 _____________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 BlockerBoy.py:
+
 IP Extraction- The script reads a file named nids.log and extracts all IP addresses from it. The IP addresses are written into a new file named blockthese2.txt.
 
 Threat Checking- Each IP address in blockthese2.txt is then checked against AlienVault's Open Threat Exchange (OTX), a threat intelligence service. This is done using AlienVault's OTX API. The script sends a request to the API for each IP address, checking whether there are any threat pulses associated with that IP.
