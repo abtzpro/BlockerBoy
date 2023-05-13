@@ -39,7 +39,7 @@ pip install requests
 
 Download the repo as a zip and unzip the files. The files should be in their own directory you can label it whatever just remember, this directory will be the output directory of your NIDS logs and thus must be the directory the scripts are run from to ensure BlockerBoy.py can find the nids.log file exported and updated real time by NIDS2.py file. The BlockerBoy.py script will run automatically every 24 hours. 
 
-## Attacks NIDS2.p currently looks for
+## Attacks "NIDS2.py" currently looks for
 
 NIDS2.py is designed to detect several types of suspicious network activities or potential attack indicators. Here are the types of attacks it currently checks for:
 
