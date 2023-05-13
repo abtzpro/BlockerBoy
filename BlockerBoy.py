@@ -15,6 +15,8 @@ def extract_ips(log_file):
     with open(log_file, 'r') as file:
         log_data = file.read()
     ips = re.findall(r'[0-9]+(?:\.[0-9]+){3}', log_data)
+    # Exclude private IPs
+    ips = [ip for ip in ips if not (ip.startswith('10.') or ip.startswith('192.168.') or '172.' in ip.split('.')[0] and 16 <= int(ip.split('.')[1]) <= 31)]
     return ips
 
 def check_otx(ip):
@@ -53,8 +55,10 @@ def main():
                         if block_ip(ip, rule_name):
                             blocked_ips.add(ip)
                             print(f'Successfully blocked IP: {ip}')
+
         except Exception as e:
             print(f"Error in main loop: {e}")
+
         time.sleep(24*60*60)
 
 if __name__ == "__main__":
