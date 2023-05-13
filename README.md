@@ -35,7 +35,7 @@ pip install requests
 2. Replace 'YOUR_OTX_API_KEY' in the "BlockerBoy.py" script with your AlienVault OTX API key.
 3. Run the script as an administrator.
 
-## Usage
+## notes pre-run
 
 Download the repo as a zip and unzip the files. The files should be in their own directory you can label it whatever just remember, this directory will be the output directory of your NIDS logs and thus must be the directory the scripts are run from to ensure BlockerBoy.py can find the nids.log file exported and updated real time by NIDS2.py file. The BlockerBoy.py script will run automatically every 24 hours. 
 
