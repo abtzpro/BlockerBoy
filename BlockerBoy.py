@@ -40,6 +40,7 @@ def block_ip(ip, rule_name):
 
 def main():
     blocked_ips = set()
+    checked_ips = set()  # Set of IPs already checked against OTX
     while True:
         try:
             with open('threat_feed.txt', 'w') as out_file:  # Change output file to threat_feed.txt
@@ -48,13 +49,15 @@ def main():
 
             with open('Confirmed-Threat-Network-Traffic.txt', 'a') as threat_file:
                 for ip in ips:
-                    print(f"Checking IP: {ip}")
-                    if ip not in blocked_ips and check_otx(ip):
-                        threat_file.write(f'{ip}\n')
-                        rule_name = RULE_NAME_PREFIX + datetime.now().strftime("%Y%m%d%H%M%S")
-                        if block_ip(ip, rule_name):
-                            blocked_ips.add(ip)
-                            print(f'Successfully blocked IP: {ip}')
+                    if ip not in checked_ips:  # Only check IPs not already checked against OTX
+                        checked_ips.add(ip)  # Add IP to checked_ips set
+                        print(f"Checking IP: {ip}")
+                        if ip not in blocked_ips and check_otx(ip):
+                            threat_file.write(f'{ip}\n')
+                            rule_name = RULE_NAME_PREFIX + datetime.now().strftime("%Y%m%d%H%M%S")
+                            if block_ip(ip, rule_name):
+                                blocked_ips.add(ip)
+                                print(f'Successfully blocked IP: {ip}')
 
         except Exception as e:
             print(f"Error in main loop: {e}")
