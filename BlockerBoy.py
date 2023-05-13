@@ -56,13 +56,13 @@ def main():
                     if ip not in checked_ips:  # Only check IPs not already checked against OTX
                         checked_ips.add(ip)  # Add IP to checked_ips set
                         print(f"Checking IP: {ip}")
-                        if ip not in blocked_ips and check_otx(ip):
+                        if check_otx(ip):  # Check OTX regardless of whether IP was blocked before
                             threat_file.write(f'{ip}\n')
-                            rule_name = RULE_NAME_PREFIX + datetime.now().strftime("%Y%m%d%H%M%S")
-                            if block_ip(ip, rule_name):
-                                blocked_ips.add(ip)
-                                print(f'{Fore.GREEN}Successfully blocked IP:{Fore.RED} {ip}')
-
+                            if ip not in blocked_ips:  # Only block IPs not already blocked
+                                rule_name = RULE_NAME_PREFIX + datetime.now().strftime("%Y%m%d%H%M%S")
+                                if block_ip(ip, rule_name):
+                                    blocked_ips.add(ip)
+                                    print(f'{Fore.GREEN}Successfully blocked IP:{Fore.RED} {ip}')
         except Exception as e:
             print(Fore.YELLOW + f"Error in main loop: {e}")
 
