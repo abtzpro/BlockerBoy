@@ -33,7 +33,9 @@ pip install requests
 
 1. Clone this repository or download the scripts.
 2. Replace 'YOUR_OTX_API_KEY' in the "BlockerBoy.py" script with your AlienVault OTX API key.
-3. Run the script as an administrator.
+3. Run the two scripts as an administrator.
+4. First run NIDS@.py and keep it running in the background.
+5. Then run BlockerBoy.py and keep it running in the background.
 
 ## notes pre-run
 
