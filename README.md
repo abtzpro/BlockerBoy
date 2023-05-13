@@ -81,6 +81,8 @@ Packet Capture- The script starts packet capture using the Scapy's sniff() funct
 
 Main Loop- In the main loop, the script repeatedly performs the packet capture and processing, and backs up the logs to all available drives every 24 hours.
 
+![NIDS2](https://github.com/abtzpro/BlockerBoy/assets/121298839/c3f312bb-81b8-4b63-bd2e-6f67d56a69dd)
+
 _____________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 BlockerBoy.py:
