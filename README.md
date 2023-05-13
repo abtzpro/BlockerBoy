@@ -1,8 +1,5 @@
 ## BlockerBoy
 
-![BlockerBoy](https://github.com/abtzpro/BlockerBoy/assets/121298839/5d7a3300-c785-4c2f-8fd7-57cabe3861f4)
-
-
 A work in progress, basic NIDS and nefarious traffic cross-referencer/blocker, for windows based machines
 
 ## Usage
@@ -94,6 +91,9 @@ Threat Logging- If an IP address is found to be associated with any threat pulse
 IP Blocking- The script then interacts with Windows Firewall to block all the malicious IPs logged in the Confirmed-Threat-Network-Traffic.txt file. It creates a new inbound rule for each malicious IP to block any incoming traffic from it. The script ensures it doesn't block an IP if it's already blocked.
 
 Automated Run- The script is designed to execute the above steps every 24 hours. This means it will continuously update its list of malicious IPs, ensuring your system stays protected against any new threats.
+
+![BlockerBoy](https://github.com/abtzpro/BlockerBoy/assets/121298839/5d7a3300-c785-4c2f-8fd7-57cabe3861f4)
+
 
 ## License
 
