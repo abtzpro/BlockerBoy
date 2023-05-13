@@ -2,9 +2,6 @@
 
 ![BlockerBoy (2)](https://github.com/abtzpro/BlockerBoy/assets/121298839/2d7335c4-0186-43f2-ada0-40c9599f34f6)
 
-
-A work in progress, basic NIDS and nefarious traffic cross-referencer/blocker, for windows based machines
-
 ## Usage
 
 You can use "NIDS2.py" as a basic network intrusion detection system to export live real time network logs as a logfile called "nids.log". (These logs can further be used for an SEIM)
