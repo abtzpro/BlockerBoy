@@ -42,7 +42,7 @@ def main():
     blocked_ips = set()
     while True:
         try:
-            with open('blockthese2.txt', 'w') as out_file:
+            with open('threat_feed.txt', 'w') as out_file:  # Change output file to threat_feed.txt
                 ips = extract_ips('nids.log')
                 out_file.write('\n'.join(ips))
 
