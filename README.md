@@ -19,7 +19,7 @@ These instructions will guide you on how to deploy the script on your local wind
 - An active internet connection
 - Windows 10 Home or higher
 - Administrative rights to create Windows Firewall rules
-- AlienVault OTX API key
+- AlienVault OTX API key free from here - https://otx.alienvault.com/ | After signup, navigate to https://otx.alienvault.com/api to access your OTX API key 
 
 ### Dependencies
 
