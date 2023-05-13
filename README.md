@@ -1,5 +1,8 @@
 ## BlockerBoy
 
+![BlockerBoy](https://github.com/abtzpro/BlockerBoy/assets/121298839/5d7a3300-c785-4c2f-8fd7-57cabe3861f4)
+
+
 A work in progress, basic NIDS and nefarious traffic cross-referencer/blocker, for windows based machines
 
 ## Usage
