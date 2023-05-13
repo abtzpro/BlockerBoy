@@ -23,11 +23,26 @@ These instructions will guide you on how to deploy the script on your local wind
 
 ### Dependencies
 
-The BlockerBoy.py script depends on the `requests` library. Install it with:
+The BlockerBoy.py script relies on the following Python libraries:
 
-```bash
-pip install requests
-```
+re: The built-in Python module for regular expressions. This is used for extracting IP addresses from the log file.
+
+json: The built-in Python module for handling JSON data. This is used for parsing the response from the AlienVault OTX API.
+
+requests: A popular third-party library for making HTTP requests in Python. This is used for querying the AlienVault OTX API.
+
+subprocess: A built-in Python module for spawning new processes, connecting to their input/output/error pipes, and obtaining their return codes.
+
+os: A built-in Python module that provides a portable way of using operating system dependent functionality, such as reading from and writing to files.
+
+time: A built-in Python module for time-related functions. This is used for making the script wait for 24 hours between each cycle of extracting IPs, checking them, and blocking malicious ones.
+
+datetime: A built-in Python module for working with dates and times. This is used for generating unique names for the firewall rules.
+
+colorama: A third-party library for producing colored terminal text and cursor positioning.
+
+You can install required python package "requests" with: pip install requests
+You can install required python package colorama with: pip install colorama
 
 ## Deployment
 
