@@ -39,6 +39,25 @@ pip install requests
 
 Download the repo as a zip and unzip the files. The files should be in their own directory you can label it whatever just remember, this directory will be the output directory of your NIDS logs and thus must be the directory the scripts are run from to ensure BlockerBoy.py can find the nids.log file exported and updated real time by NIDS2.py file. The BlockerBoy.py script will run automatically every 24 hours. 
 
+## Attacks NIDS2.p currently looks for
+
+NIDS2.py is designed to detect several types of suspicious network activities or potential attack indicators. Here are the types of attacks it currently checks for:
+
+1. **Plaintext Credentials in Mail Traffic:** The script checks for plaintext credentials ("user" and "pass") in the payload of TCP packets destined for ports typically used by mail services (ports 110, 143, and 25).
+
+2. **SSH Brute-Force Attacks:** The script looks for signs of SSH brute-force attacks. If it detects traffic to port 22 (typically used by SSH) with a payload containing both "ssh" and "invalid user", it logs this as a potential SSH brute-force attack.
+
+3. **HTTP/HTTPS Attacks:** The script checks traffic destined for ports 80 (HTTP) and 443 (HTTPS) for signs of SQL Injection or Cross-Site Scripting (XSS) attacks. If the payload contains the phrases "sql injection" or "xss", it logs this as a potential attack.
+
+4. **Outbound Traffic:** If the script detects outbound traffic (destined for port 443 and with the TCP flag set to 0x18), it logs this as potentially suspicious.
+
+5. **Potential SSH Attacks:** For SSH traffic (destined for port 22), the script checks if the payload length is greater than 500 and does not contain the word "invalid". This could indicate a potential SSH attack.
+
+6. **Known Threats from Threat Intelligence Feed:** The script checks if any source IP of outbound traffic to port 80 is listed in a threat intelligence feed. If a match is found, it logs this as a detected threat.
+
+7. **Multiple Connections to the Same Port:** The script implements a correlation rule to detect multiple connections to the same port in a short period of time. If more than 5 connections are detected within 10 seconds, it logs this as potentially suspicious behavior.
+
+
 ## Script Breakdown
 
 NIDS2.py: 
