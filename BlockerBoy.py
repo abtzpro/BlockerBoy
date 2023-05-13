@@ -5,6 +5,10 @@ import subprocess
 import os
 import time
 from datetime import datetime
+from colorama import Fore, init
+
+# Initialize colorama
+init(autoreset=True)
 
 OTX_API_KEY = 'YOUR_OTX_API_KEY'
 OTX_URL = 'https://otx.alienvault.com:443/api/v1/indicators/IPv4/{}/general'
@@ -26,7 +30,7 @@ def check_otx(ip):
         time.sleep(API_DELAY)  # delay to avoid rate limiting
         return response.status_code == 200 and response.json().get('pulse_info', {}).get('count', 0) > 0
     except Exception as e:
-        print(f"Error checking OTX for IP {ip}: {e}")
+        print(Fore.YELLOW + f"Error checking OTX for IP {ip}: {e}")
         return False
 
 def block_ip(ip, rule_name):
@@ -35,7 +39,7 @@ def block_ip(ip, rule_name):
         print(result.stdout, result.stderr)
         return result.returncode == 0
     except Exception as e:
-        print(f"Error blocking IP {ip}: {e}")
+        print(Fore.YELLOW + f"Error blocking IP {ip}: {e}")
         return False
 
 def main():
@@ -57,10 +61,10 @@ def main():
                             rule_name = RULE_NAME_PREFIX + datetime.now().strftime("%Y%m%d%H%M%S")
                             if block_ip(ip, rule_name):
                                 blocked_ips.add(ip)
-                                print(f'Successfully blocked IP: {ip}')
+                                print(f'{Fore.GREEN}Successfully blocked IP:{Fore.RED} {ip}')
 
         except Exception as e:
-            print(f"Error in main loop: {e}")
+            print(Fore.YELLOW + f"Error in main loop: {e}")
 
         time.sleep(24*60*60)
 
